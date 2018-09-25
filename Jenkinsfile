@@ -1,7 +1,7 @@
 pipeline {
     agent {
       dockerfile true
-      args  "--entrypoint='' "
+      additionalBuildArgs  "--entrypoint='' "
     }
     stages {
         stage('Test') {
