@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo Staging...'
-		sh 'echo $(pwd)
+		sh 'echo $(pwd)'
             }
         }
     }
