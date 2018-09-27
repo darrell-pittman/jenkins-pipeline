@@ -5,7 +5,7 @@ pipeline {
 	stage('Master Test') {
 	    agent any
 	    steps {
-		sh 'echo "WORKSPACE: $WORKSPACE ####################################################"'
+		sh 'cp /etc/salesforce/secrets/secret.txt $WORKSPACE/'
 	    }
 	}
         stage('Docker') {
