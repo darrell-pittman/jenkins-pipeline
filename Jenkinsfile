@@ -3,7 +3,9 @@ pipeline {
     agent master
     stages {
 	stage('Master Test') {
-	    sh 'echo $(pwd)'
+	    steps {
+		sh 'echo $(pwd)'
+	    }
 	}
     }
     agent {
