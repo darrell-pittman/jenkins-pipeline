@@ -5,7 +5,7 @@ pipeline {
 	stage('Master Test') {
 	    agent any
 	    steps {
-		sh 'echo $(pwd)'
+		sh 'echo "WORKSPACE: $WORKSPACE ####################################################"'
 	    }
 	}
         stage('Docker') {
