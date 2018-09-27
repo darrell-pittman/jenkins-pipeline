@@ -1,5 +1,11 @@
 #!/usr/bin/env groovy
 pipeline {
+    agent master
+    stages {
+	stage('Master Test') {
+	    sh 'echo $(pwd)'
+	}
+    }
     agent {
       dockerfile {
         args  "--entrypoint='' "
@@ -14,7 +20,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo Staging...'
-		sh 'cat /var/salesforce/secrets/secret-test.txt'
             }
         }
     }
