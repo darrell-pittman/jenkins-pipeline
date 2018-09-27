@@ -2,28 +2,23 @@
 pipeline {
     agent none
     stages {
-	agent any
 	stage('Master Test') {
+	    agent any
 	    steps {
 		sh 'echo $(pwd)'
 	    }
 	}
-    }
-    stages {
-	agent {
-          dockerfile {
-            args  "--entrypoint='' "
-          }
-        }
-	stage('Source') {
+        stage {
+	    agent {
+		dockerfile {
+		    args  "--entrypoint='' "
+		}
+            }
 	    steps {
 		checkout scm
+		sh 'echo Docker...'
+		sh 'echo $(pwd)'
 	    }
 	}
-        stage('Test') {
-            steps {
-                sh 'echo Staging...'
-            }
-        }
     }
 }
