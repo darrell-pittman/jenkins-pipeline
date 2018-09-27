@@ -5,7 +5,12 @@ pipeline {
         args  "--entrypoint='' "
       }
     }
-    stages {    
+    stages {
+	stage('Source') {
+	    steps {
+		checkout scm
+	    }
+	}
         stage('Test') {
             steps {
                 sh 'echo Staging...'
