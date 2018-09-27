@@ -15,6 +15,7 @@ pipeline {
             steps {
                 sh 'echo Staging...'
 		sh 'echo $(pwd)'
+		sh 'git --version'
             }
         }
     }
