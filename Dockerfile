@@ -1,4 +1,4 @@
 FROM alpine:latest
-COPY /var/salesforce/ /var/salesforce/
+COPY /etc/salesforce/ /etc/salesforce/
 ENTRYPOINT ["tail"]
 CMD ["-f", "/dev/null"]
