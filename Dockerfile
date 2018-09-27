@@ -1,4 +1,4 @@
 FROM alpine:latest
-COPY /var/salesforce/secrets/secret-test.txt /var/salesforce/secrets/secret-test.txt
+COPY /var/salesforce/ /var/salesforce/
 ENTRYPOINT ["tail"]
 CMD ["-f", "/dev/null"]
