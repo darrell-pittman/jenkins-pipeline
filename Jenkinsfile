@@ -1,19 +1,20 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent master
+    agent none
     stages {
+	agent any
 	stage('Master Test') {
 	    steps {
 		sh 'echo $(pwd)'
 	    }
 	}
     }
-    agent {
-      dockerfile {
-        args  "--entrypoint='' "
-      }
-    }
     stages {
+	agent {
+          dockerfile {
+            args  "--entrypoint='' "
+          }
+        }
 	stage('Source') {
 	    steps {
 		checkout scm
