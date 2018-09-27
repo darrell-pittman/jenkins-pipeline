@@ -10,12 +10,12 @@ pipeline {
 	}
         stage('Docker') {
 	    agent {
+		checkout scm
 		dockerfile {
 		    args  "--entrypoint='' "
 		}
             }
 	    steps {
-		checkout scm
 		sh 'echo Docker...'
 		sh 'echo $(pwd)'
 	    }
