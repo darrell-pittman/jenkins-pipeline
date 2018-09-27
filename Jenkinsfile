@@ -8,7 +8,7 @@ pipeline {
 		sh 'echo $(pwd)'
 	    }
 	}
-        stage {
+        stage('Docker') {
 	    agent {
 		dockerfile {
 		    args  "--entrypoint='' "
