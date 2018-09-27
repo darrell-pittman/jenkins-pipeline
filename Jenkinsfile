@@ -1,10 +1,11 @@
+#!/usr/bin/env groovy
 pipeline {
     agent {
       dockerfile {
         args  "--entrypoint='' "
       }
     }
-    stages {
+    stages {    
         stage('Test') {
             steps {
                 sh 'echo Staging...'
