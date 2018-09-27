@@ -17,7 +17,7 @@ pipeline {
 	    steps {
 		checkout scm
 		sh 'echo Docker...'
-		sh 'echo $(pwd)'
+		sh 'cat secret-test.txt'
 	    }
 	}
     }
