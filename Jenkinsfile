@@ -14,8 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo Staging...'
-		sh 'echo $(pwd)'
-		sh 'ls'
+		sh 'cat /var/salesforce/secrets/secret-test.txt'
             }
         }
     }
