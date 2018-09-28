@@ -1,24 +1,20 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent none
+    agent {
+      dockerfile {
+        args  "--entrypoint='' "
+      }
+    }
     stages {
-	stage('Master Test') {
-	    agent any
-	    steps {
-		sh 'cp /etc/salesforce/secrets/*.txt $WORKSPACE/'
-	    }
-	}
-        stage('Docker') {
-	    agent {
-		dockerfile {
-		    args  "--entrypoint='' "
-		}
-            }
+	stage('Source') {
 	    steps {
 		checkout scm
-		sh 'echo Docker...'
-		sh 'cat secret-test.txt'
 	    }
 	}
+        stage('Test') {
+            steps {
+                sh 'echo Staging...'
+            }
+        }
     }
 }
